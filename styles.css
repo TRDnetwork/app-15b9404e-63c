@@ -1,0 +1,468 @@
+/* Cyberpunk Task Manager - TaskFlow Pro */
+
+/* Layout */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 2px solid #00f3ff;
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 900;
+    font-size: 2.5rem;
+    background: linear-gradient(90deg, #00f3ff, #ff2a6d);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.auth-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.user-info {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 500;
+    color: #8a8ab5;
+    font-size: 0.9rem;
+}
+
+/* Auth Forms */
+.auth-gate {
+    max-width: 400px;
+    margin: 100px auto;
+    padding: 30px;
+    background-color: #151522;
+    border: 1px solid #00f3ff;
+    border-radius: 0;
+    box-shadow: 0 0 20px rgba(0, 243, 255, 0.2);
+}
+
+.auth-gate h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    color: #00f3ff;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: #e0e0ff;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px 15px;
+    background-color: #0a0a12;
+    border: 1px solid #8a8ab5;
+    color: #e0e0ff;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: #00f3ff;
+    box-shadow: 0 0 10px rgba(0, 243, 255, 0.3);
+}
+
+.btn {
+    padding: 12px 24px;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 0;
+}
+
+.btn-primary {
+    background-color: #00f3ff;
+    color: #0a0a12;
+}
+
+.btn-primary:hover {
+    background-color: #00c4cc;
+    box-shadow: 0 0 15px rgba(0, 243, 255, 0.4);
+}
+
+.btn-secondary {
+    background-color: #ff2a6d;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background-color: #e0245f;
+    box-shadow: 0 0 15px rgba(255, 42, 109, 0.4);
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: #00f3ff;
+    border: 1px solid #00f3ff;
+}
+
+.btn-outline:hover {
+    background-color: rgba(0, 243, 255, 0.1);
+}
+
+.btn-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.btn-group .btn {
+    flex: 1;
+}
+
+/* Task Dashboard */
+.dashboard {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+@media (min-width: 768px) {
+    .dashboard {
+        grid-template-columns: 300px 1fr;
+    }
+}
+
+/* Command Bar */
+.command-bar {
+    background-color: #151522;
+    padding: 20px;
+    border: 1px solid #00f3ff;
+    margin-bottom: 30px;
+}
+
+.command-bar h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #00f3ff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.add-task-form {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+@media (min-width: 576px) {
+    .add-task-form {
+        grid-template-columns: 1fr auto auto;
+    }
+}
+
+.priority-select {
+    background-color: #0a0a12;
+    border: 1px solid #8a8ab5;
+    color: #e0e0ff;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 500;
+    padding: 12px;
+    font-size: 1rem;
+}
+
+/* Filters */
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.filter-btn {
+    padding: 8px 16px;
+    background-color: #0a0a12;
+    color: #8a8ab5;
+    border: 1px solid #8a8ab5;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 500;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.filter-btn:hover {
+    color: #e0e0ff;
+    border-color: #00f3ff;
+}
+
+.filter-btn.active {
+    color: #00f3ff;
+    border-color: #00f3ff;
+    background-color: rgba(0, 243, 255, 0.1);
+}
+
+.filter-btn.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #00f3ff;
+    animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(0); }
+}
+
+/* Task Grid */
+.task-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.task-card {
+    background-color: #151522;
+    border: 1px solid #2a2a3a;
+    padding: 20px;
+    position: relative;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.task-card:hover {
+    border-color: #00f3ff;
+    box-shadow: 0 0 20px rgba(0, 243, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.task-card.completed {
+    opacity: 0.7;
+    border-color: #8a8ab5;
+}
+
+.task-card.completed .task-title {
+    text-decoration: line-through;
+    color: #8a8ab5;
+}
+
+.task-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+.task-title {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: #e0e0ff;
+    flex: 1;
+    margin-right: 15px;
+}
+
+.priority-badge {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    padding: 4px 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 0;
+}
+
+.priority-high {
+    background-color: rgba(255, 42, 109, 0.2);
+    color: #ff2a6d;
+    border: 1px solid #ff2a6d;
+}
+
+.priority-medium {
+    background-color: rgba(255, 165, 0, 0.2);
+    color: #ffa500;
+    border: 1px solid #ffa500;
+}
+
+.priority-low {
+    background-color: rgba(0, 243, 255, 0.2);
+    color: #00f3ff;
+    border: 1px solid #00f3ff;
+}
+
+.task-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #2a2a3a;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 300;
+    font-size: 0.9rem;
+    color: #8a8ab5;
+}
+
+.task-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.action-btn {
+    background: none;
+    border: none;
+    color: #8a8ab5;
+    cursor: pointer;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 500;
+    font-size: 0.9rem;
+    padding: 5px 10px;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.action-btn:hover {
+    color: #e0e0ff;
+}
+
+.complete-btn:hover {
+    color: #00f3ff;
+    border-color: #00f3ff;
+}
+
+.delete-btn:hover {
+    color: #ff2a6d;
+    border-color: #ff2a6d;
+}
+
+/* Empty State */
+.empty-state {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #151522;
+    border: 1px dashed #2a2a3a;
+}
+
+.empty-state h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #00f3ff;
+    margin-bottom: 15px;
+}
+
+.empty-state p {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 400;
+    color: #8a8ab5;
+    font-size: 1.1rem;
+}
+
+/* Error Messages */
+.error-message {
+    background-color: rgba(255, 42, 109, 0.1);
+    border: 1px solid #ff2a6d;
+    color: #ff2a6d;
+    padding: 12px 15px;
+    margin: 15px 0;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+/* Sign Out Button */
+.sign-out-btn {
+    background-color: transparent;
+    color: #ff2a6d;
+    border: 1px solid #ff2a6d;
+    padding: 8px 16px;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.sign-out-btn:hover {
+    background-color: rgba(255, 42, 109, 0.1);
+    box-shadow: 0 0 10px rgba(255, 42, 109, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+    
+    .header h1 {
+        font-size: 2rem;
+    }
+    
+    .task-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .add-task-form {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Animation for task deletion */
+@keyframes shrinkOut {
+    from {
+        transform: scaleX(1);
+        opacity: 1;
+    }
+    to {
+        transform: scaleX(0);
+        opacity: 0;
+    }
+}
+
+.task-card.deleting {
+    animation: shrinkOut 0.3s ease forwards;
+}
